@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Artivision</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .checkout-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .checkout-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #1a1a40;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .form-section {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .form-section h2 {
+      font-size: 20px;
+      color: #1a1a40;
+      margin-bottom: 10px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .form-group input, .form-group select {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: #1a1a40;
+    }
+
+    .form-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-actions button {
+      padding: 10px 20px;
+      background: #1a1a40;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .form-actions button:hover {
+      background-color: #444488;
+    }
+
+    .payment-methods {
+      display: flex;
+      gap: 10px;
+    }
+
+    .payment-method {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .payment-method input {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="Artivision Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Shop</a></li>
+                <!-- <li><a href="#about">About Us</a></li> -->
+                <!-- <li><a href="#contact">Contact</a></li> -->
+                <li><a href="cart.html">cart</a></li>
+                <li><a href="#contact">wishlist</a></li>
+                <li><a href="">signup</a></li>
+                <li><a href="">profile</a></li>
+            </ul>
+        </nav>
+    </header>
+  <div class="checkout-container">
+    <h1 class="checkout-title">Checkout</h1>
+    <form>
+      <!-- Shipping Information -->
+      <div class="form-section">
+        <h2>Shipping Information</h2>
+        <div class="form-group">
+          <label for="shipping-name">Full Name</label>
+          <input type="text" id="shipping-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="shipping-address">Address</label>
+          <input type="text" id="shipping-address" placeholder="123 Main St" required>
+        </div>
+        <div class="form-group">
+          <label for="shipping-city">City</label>
+          <input type="text" id="shipping-city" placeholder="New York" required>
+        </div>
+        <div class="form-group">
+          <label for="shipping-country">Country</label>
+          <select id="shipping-country" required>
+            <option value="" disabled selected>Select your country</option>
+            <option value="USA">United States</option>
+            <option value="UK">United Kingdom</option>
+            <option value="CA">Canada</option>
+            <option value="AU">Australia</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="shipping-zip">Postal/ZIP Code</label>
+          <input type="text" id="shipping-zip" placeholder="12345" required>
+        </div>
+      </div>
+
+      <!-- Billing Information -->
+      <div class="form-section">
+        <h2>Billing Information</h2>
+        <div class="form-group">
+          <label for="billing-same">
+            <input type="checkbox" id="billing-same" checked> Same as shipping address
+          </label>
+        </div>
+        <div id="billing-details" style="display: none;">
+          <div class="form-group">
+            <label for="billing-name">Full Name</label>
+            <input type="text" id="billing-name" placeholder="John Doe">
+          </div>
+          <div class="form-group">
+            <label for="billing-address">Address</label>
+            <input type="text" id="billing-address" placeholder="123 Main St">
+          </div>
+          <div class="form-group">
+            <label for="billing-city">City</label>
+            <input type="text" id="billing-city" placeholder="New York">
+          </div>
+          <div class="form-group">
+            <label for="billing-country">Country</label>
+            <select id="billing-country">
+              <option value="" disabled selected>Select your country</option>
+              <option value="USA">United States</option>
+              <option value="UK">United Kingdom</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="billing-zip">Postal/ZIP Code</label>
+            <input type="text" id="billing-zip" placeholder="12345">
+          </div>
+        </div>
+      </div>
+
+      <!-- Payment Information -->
+      <div class="form-section">
+        <h2>Payment Information</h2>
+        <div class="form-group">
+          <label for="card-name">Name on Card</label>
+          <input type="text" id="card-name" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="card-number">Card Number</label>
+          <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+        </div>
+        <div class="form-group">
+          <label for="card-expiry">Expiration Date</label>
+          <input type="text" id="card-expiry" placeholder="MM/YY" required>
+        </div>
+        <div class="form-group">
+          <label for="card-cvv">CVV</label>
+          <input type="text" id="card-cvv" placeholder="123" required>
+        </div>
+      </div>
+
+      <!-- Submit and Cancel Buttons -->
+      <div class="form-actions">
+        <button type="button" onclick="alert('Order submitted!')">Submit Order</button>
+        <button type="button" onclick="window.location.href='cart.html'">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    const billingSameCheckbox = document.getElementById('billing-same');
+    const billingDetails = document.getElementById('billing-details');
+
+    billingSameCheckbox.addEventListener('change', () => {
+      billingDetails.style.display = billingSameCheckbox.checked ? 'none' : 'block';
+    });
+  </script>
+</body>
+</html>

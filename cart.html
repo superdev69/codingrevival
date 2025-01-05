@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart - Artivision</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .cart-container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .cart-title {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+      color: #1a1a40;
+      margin-bottom: 20px;
+    }
+
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    .cart-table th, .cart-table td {
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cart-table th {
+      background-color: #f1f1f1;
+      font-weight: bold;
+    }
+
+    .cart-table td img {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quantity-control button {
+      width: 30px;
+      height: 30px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .quantity-control button:hover {
+      background-color: #002244;
+      color: #ffcc00;
+    }
+
+    .quantity-control input {
+      width: 40px;
+      height: 30px;
+      text-align: center;
+      margin: 0 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .cart-summary {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .cart-summary div {
+      padding: 10px;
+      background: #f1f1f1;
+      border-radius: 4px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .promo-code {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .promo-code input {
+      width: 70%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .promo-code button {
+      padding: 10px 20px;
+      background: #003366;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .promo-code button:hover {
+      background-color: #002244;
+      color: #ffcc00;
+    }
+
+    .cart-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .cart-actions button {
+      padding: 10px 20px;
+      background: #1a1a40;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .cart-actions button:hover {
+      background-color: #002244;
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Artivision Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="catalog.html">Shop</a></li>
+            <!-- <li><a href="#about">About Us</a></li> -->
+            <!-- <li><a href="#contact">Contact</a></li> -->
+            <!-- <li><a href="cart.html">cart</a></li> -->
+            <li><a href="#contact">wishlist</a></li>
+            <li><a href="">signup</a></li>
+            <li><a href="">profile</a></li>
+        </ul>
+    </nav>
+  </header>
+  <div class="cart-container">
+    <h1 class="cart-title">My Shopping Cart</h1>
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Size</th>
+          <th>Quantity</th>
+          <th>Remove</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <img src="leggings.jpg" alt="Streamline Leggings">
+            <div>Streamline Leggings<br><small>Product Code: MLSB</small></div>
+          </td>
+          <td>S</td>
+          <td class="quantity-control">
+            <button>-</button>
+            <input type="number" value="1">
+            <button>+</button>
+          </td>
+          <td><button>X</button></td>
+          <td>£55</td>
+        </tr>
+        <tr>
+          <td>
+            <img src="sports-bra.jpg" alt="Streamline Sports Bra">
+            <div>Streamline Sports Bra<br><small>Product Code: MLSB</small></div>
+          </td>
+          <td>S</td>
+          <td class="quantity-control">
+            <button>-</button>
+            <input type="number" value="1">
+            <button>+</button>
+          </td>
+          <td><button>X</button></td>
+          <td>£55</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="cart-summary">
+      <div>Discount: £0.00</div>
+      <div>Delivery: £0.00</div>
+      <div>Subtotal: £110.00</div>
+      <div>Total: £110.00</div>
+    </div>
+
+    <div class="promo-code">
+      <input type="text" placeholder="Enter promo code">
+      <button>Apply Discount</button>
+    </div>
+
+    <div class="cart-actions">
+      <a href="catalog.html"><button>Continue Shopping</button></a>
+      <a href="checkout.html"><button>Checkout</button></a>
+    </div>
+  </div>
+</body>
+</html>
