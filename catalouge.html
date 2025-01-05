@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalog - Artivision</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: white; /* white */
+      color: #060606;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background-color: #2a2a5c;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      color: #ffcc00;
+    }
+
+    .catalog-section {
+      margin: 20px auto;
+      max-width: 1000px;
+      padding: 20px;
+      background-color: #2a2a5c;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .catalog-section h2 {
+      color: #ffcc00;
+      margin-bottom: 10px;
+    }
+
+    .catalog-section p {
+      margin-bottom: 20px;
+    }
+
+    .carousel {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .carousel-items {
+      display: flex;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-item {
+      flex: 0 0 25%; /* Four items per row */
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      border-radius: 8px;
+      height: 250px;
+    }
+
+    .carousel-item h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+      color: #ffffff;
+    }
+
+    .carousel-item p {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    .paginator {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .paginator button {
+      padding: 5px 10px;
+      margin: 0 5px;
+      border: none;
+      background-color: #5555aa;
+      color: #ffffff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .paginator button:hover {
+      background-color: #444488;
+    }
+  </style>
+</head>
+<body>
+  <!-- <header>
+    <h1>Artivision Catalog</h1>
+  </header> -->
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+        <img src="img/logo.png" alt="Artivision Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <!-- <li><a href="catalog.html">Shop</a></li> -->
+            <!-- <li><a href="#about">About Us</a></li> -->
+            <!-- <li><a href="#contact">Contact</a></li> -->
+            <li><a href="cart.html">cart</a></li>
+            <li><a href="#contact">wishlist</a></li>
+            <li><a href="">signup</a></li>
+            <li><a href="">profile</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <!-- Section Template -->
+  <div class="catalog-section">
+    <h2>New Arrivals</h2>
+    <p>Explore the freshest art and fashion pieces, curated for the season.</p>
+    <div class="carousel" id="new-arrivals-carousel">
+      <div class="carousel-items">
+        <!-- Carousel Items -->
+        <div class="carousel-item">
+          <img src="img/fashion1.jpg" alt="Item 1">
+          <h3>Product 1</h3>
+          <p>$49.99</p>
+        </div>
+        <div class="carousel-item">
+            <img src="img/fashion2.jpg" alt="Item 1">
+            <h3>Product 2</h3>
+            <p>$49.99</p>
+        </div>
+        <div class="carousel-item">
+            <img src="img/fashion2.jpg" alt="Item 1">
+            <h3>Product 3</h3>
+            <p>$49.99</p>
+        </div>
+        <div class="carousel-item">
+            <img src="img/fashion1.jpg" alt="Item 1">
+            <h3>Product 4</h3>
+            <p>$49.99</p>
+        </div>
+        <div class="carousel-item">
+            <img src="img/fashion2.jpg" alt="Item 1">
+            <h3>Product 5</h3>
+            <p>$49.99</p>
+        </div>
+        <div class="carousel-item">
+            <img src="img/fashion4.jpg" alt="Item 1">
+            <h3>Product 6</h3>
+            <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="img/fashion1.jpg" alt="Item 1">
+              <h3>Product 7</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="img/fashion2.jpg" alt="Item 1">
+              <h3>Product 8</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="img/fashion3.jpg" alt="Item 1">
+              <h3>Product 9</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="img/fashion1.jpg" alt="Item 1">
+              <h3>Product 10</h3>
+              <p>$49.99</p>
+          </div>
+        <!-- Repeat similar items for 10 -->
+      </div>
+    </div>
+    <div class="paginator" id="new-arrivals-paginator">
+      <button onclick="paginate('new-arrivals-carousel', -1)">←</button>
+      <button onclick="paginate('new-arrivals-carousel', 1)">→</button>
+    </div>
+  </div>
+
+  <div class="catalog-section">
+    <h2>Discount Sales</h2>
+    <p>Grab your favorite pieces at unbeatable prices!</p>
+    <div class="carousel" id="discount-sales-carousel">
+      <div class="carousel-items">
+        <!-- Carousel Items -->
+        <div class="carousel-item">
+            <img src="item1.jpg" alt="Item 1">
+            <h3>Product 1</h3>
+            <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+        <!-- Repeat similar items for 10 -->
+      </div>
+    </div>
+    <div class="paginator" id="discount-sales-paginator">
+      <button onclick="paginate('discount-sales-carousel', -1)">←</button>
+      <button onclick="paginate('discount-sales-carousel', 1)">→</button>
+    </div>
+  </div>
+
+  <div class="catalog-section">
+    <h2>Trending Pieces</h2>
+    <p>Stay ahead of the curve with the most popular items of the moment.</p>
+    <div class="carousel" id="trending-pieces-carousel">
+      <div class="carousel-items">
+        <!-- Carousel Items -->
+        <div class="carousel-item">
+            <img src="item1.jpg" alt="Item 1">
+            <h3>Product 1</h3>
+            <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+          </div>
+          <div class="carousel-item">
+              <img src="item1.jpg" alt="Item 1">
+              <h3>Product 1</h3>
+              <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+            <div class="carousel-item">
+                <img src="item1.jpg" alt="Item 1">
+                <h3>Product 1</h3>
+                <p>$49.99</p>
+            </div>
+        <!-- Repeat similar items for 10 -->
+      </div>
+    </div>
+    <div class="paginator" id="trending-pieces-paginator">
+      <button onclick="paginate('trending-pieces-carousel', -1)">←</button>
+      <button onclick="paginate('trending-pieces-carousel', 1)">→</button>
+    </div>
+  </div>
+
+  <script>
+    const carouselWidths = {};
+
+    function paginate(carouselId, direction) {
+      const carousel = document.getElementById(carouselId);
+      const items = carousel.querySelector('.carousel-items');
+      const itemWidth = items.firstElementChild.offsetWidth;
+
+      if (!carouselWidths[carouselId]) carouselWidths[carouselId] = 0;
+
+      const newOffset = carouselWidths[carouselId] + direction * (itemWidth * 4); // 4 items per page
+      const maxOffset = -(items.children.length * itemWidth) + (itemWidth * 4);
+
+      if (newOffset <= 0 && newOffset >= maxOffset) {
+        carouselWidths[carouselId] = newOffset;
+        items.style.transform = `translateX(${newOffset}px)`;
+      }
+    }
+  </script>
+</body>
+</html>
